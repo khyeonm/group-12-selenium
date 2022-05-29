@@ -1,3 +1,4 @@
+#구민주 학생 작성
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
@@ -26,4 +27,52 @@ for j in range(2,52):
         host = driver.find_element_by_xpath(xpath3).text
         print(f'주최사 : {host}')
         
-driver.quit()
+#driver.quit()
+
+#김현민 학생 작성
+from selenium.webdriver.common.by import By
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("excludeSwitches", ["enable-logging"])
+browser = webdriver.Chrome(options=options)
+#url = 'https://www.wevity.com/?c=find'
+
+Url = url+'&s=1&gbn=viewok&gp=1&ix='
+
+
+browser.get(Url+'63940')
+images = browser.find_element(by=By.CSS_SELECTOR, value='#container > div.content-area > div.content-wrap > div.content > div > div.cd-area > div.img > div.thumb > img')
+img_url = []
+img_url.append(images.get_attribute('src'))
+print(f'1. 별빛 신사리 제5기 마케팅 지원단 모집 포스터 >> {img_url}')
+
+
+
+browser.get(Url+'63943')
+images = browser.find_element(by=By.CSS_SELECTOR, value='#container > div.content-area > div.content-wrap > div.content > div > div.cd-area > div.img > div.thumb > img')
+img_url = []
+img_url.append(images.get_attribute('src'))
+print(f'2.데이터 청년 캠퍼스 교육생 모집 >> {img_url}')
+
+
+browser.get(Url+'63942')
+images = browser.find_element(by=By.CSS_SELECTOR, value='#container > div.content-area > div.content-wrap > div.content > div > div.cd-area > div.img > div.thumb > img')
+img_url = []
+img_url.append(images.get_attribute('src'))
+print(f'3. 6월 삼성 금융아카데미 교육생 모집 >> {img_url}')
+
+
+browser.get(Url+'63901')
+images = browser.find_element(by=By.CSS_SELECTOR, value='#container > div.content-area > div.content-wrap > div.content > div > div.cd-area > div.img > div.thumb > img')
+img_url = []
+img_url.append(images.get_attribute('src'))
+print(f'4. 한전KDN 대학생 홍보대사 모집 >> {img_url}')
+
+
+browser.get(Url+'63854')
+images = browser.find_element(by=By.CSS_SELECTOR, value='#container > div.content-area > div.content-wrap > div.content > div > div.cd-area > div.img > div.thumb > img')
+img_url = []
+img_url.append(images.get_attribute('src'))
+print(f'5. KH자산관리법인 금융 인턴십 5기 모집 >> {img_url}')
+
+browser.quit()
