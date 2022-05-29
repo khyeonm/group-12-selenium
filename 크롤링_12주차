@@ -27,16 +27,17 @@ for j in range(2,52):
         host = driver.find_element_by_xpath(xpath3).text
         print(f'주최사 : {host}')
         
-#driver.quit()
+driver.quit()
 
 #김현민 학생 작성
+from selenium import webdriver
+import time
 from selenium.webdriver.common.by import By
 
 options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 browser = webdriver.Chrome(options=options)
-#url = 'https://www.wevity.com/?c=find'
-
+url = 'https://www.wevity.com/?c=find'
 Url = url+'&s=1&gbn=viewok&gp=1&ix='
 
 
