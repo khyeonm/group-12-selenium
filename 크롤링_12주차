@@ -1,0 +1,29 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+
+driver = webdriver.Chrome(executable_path= "./chromedriver.exe")
+url = "https://www.wevity.com/?c=find"
+driver.get(url)
+
+time.sleep(10)
+
+res=[]
+time.sleep(10)
+for j in range(2,52):
+        
+        xpath1='//*[@id="container"]/div[2]/div[1]/div[2]/div[3]/div/ul/li['+str(j)+']/div[1]/a'
+        xpath2='//*[@id="container"]/div[2]/div[1]/div[2]/div[3]/div/ul/li['+str(j)+']/div[1]/div'
+        xpath3='//*[@id="container"]/div[2]/div[1]/div[2]/div[3]/div/ul/li['+str(j)+']/div[2]'
+       
+        name = driver.find_element_by_xpath(xpath1).text
+        print(name)
+        
+        field = driver.find_element_by_xpath(xpath2).text
+        print(field)
+        
+        host = driver.find_element_by_xpath(xpath3).text
+        print(f'주최사 : {host}')
+        
+driver.quit()
